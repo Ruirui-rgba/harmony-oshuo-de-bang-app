@@ -1,0 +1,22 @@
+{
+  "src": [
+    "pages/Index",
+    "pages/LoginByAccount",
+    "mainpage/IndexPage",
+    "mainpage/TaskInfoPage",
+    "mainpage/LatePickPage",
+    "MessagePages/MessageToTalk",
+    "mypage/MyCarPage",
+    "mypage/XiTongPage",
+    "mypage/ChangePhonePage",
+    "mypage/SecondChangePhone",
+    "mypage/ChangePassword",
+    "mypage/MessagePage",
+    "mypage/MyTaskInfo",
+    "mainpage/ZaiTuPage",
+    "mainpage/ErrorMessage",
+    "mainpage/HuiChePage",
+    "mainpage/TaskEndPage",
+    "mainpage/DaoHangPage"
+  ]
+}

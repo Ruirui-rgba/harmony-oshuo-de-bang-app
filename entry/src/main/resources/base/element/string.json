@@ -1,0 +1,56 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "module description"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "description"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "label"
+    },
+    {
+      "name": "IndexPage_title",
+      "value": "货的帮"
+    },
+    {
+      "name": "TitleFontSize",
+      "value": "16"
+    },
+    {
+      "name": "TextOneFontSize",
+      "value": "14"
+    },
+    {
+      "name": "TextTwoFontSize",
+      "value": "13"
+    },
+    {
+      "name": "TextThreeFontSize",
+      "value": "12"
+    },
+    {
+      "name": "LoginPhone",
+      "value": "手机号登陆"
+    },
+    {
+      "name": "LoginAccount",
+      "value": "账号登陆"
+    },
+    {
+      "name": "PhoneError",
+      "value": "手机号输入有误! 请重新输入"
+    },
+    {
+      "name": "YanzhengError",
+      "value": "验证码输入有误! 请重新输入"
+    },
+    {
+      "name": "Cinema_Permission",
+      "value": "使用相册"
+    }
+  ]
+}

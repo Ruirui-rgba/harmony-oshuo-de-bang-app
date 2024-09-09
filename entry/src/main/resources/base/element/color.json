@@ -1,0 +1,56 @@
+{
+  "color": [
+    {
+      "name": "start_window_background",
+      "value": "#FFFFFF"
+    },
+    {
+      "name": "Brand_Color",
+      "value": "#EF4F3F"
+    },
+    {
+      "name": "Auxiliary_Color_Success",
+      "value": "#27BA9B"
+    },
+    {
+      "name": "Auxiliary_Color_Warn",
+      "value": "#E19A30"
+    },
+    {
+      "name": "Auxiliary_Color_Error",
+      "value": "#FF4C4C"
+    },
+    {
+      "name": "Neutral_Colors_MainFont",
+      "value": "#2A2929"
+    },
+    {
+      "name": "Neutral_Colors_Formbox",
+      "value": "#D9D9D9"
+    },
+    {
+      "name": "Neutral_Colors_NeutralColor_Black",
+      "value": "#D9D9D9"
+    },
+    {
+      "name": "Neutral_Colors_SecondaryText",
+      "value": "#818181"
+    },
+    {
+      "name": "Neutral_Colors_Divided",
+      "value": "#EEEEEE"
+    },
+    {
+      "name": "Neutral_Colors_NeutralColor_White",
+      "value": "#FFFFFF"
+    },
+    {
+      "name": "Neutral_Colors_PlaceholdingFont",
+      "value": "#C2C1C1"
+    },
+    {
+      "name": "Neutral_Colors_BackgroundColor",
+      "value": "#F4F4F4"
+    }
+  ]
+}
