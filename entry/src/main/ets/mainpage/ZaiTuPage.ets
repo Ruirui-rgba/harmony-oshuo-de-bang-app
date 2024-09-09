@@ -269,15 +269,13 @@ struct ZaiTuPage {
                     promptAction.showToast({
                       message:'交付成功'
                     })
-                    router.back()
-                    emitter.emit({eventId:2})
                   }else {
                     promptAction.showToast({
                       message:'交付失败'
                     })
-                    router.back()
-                    emitter.emit({eventId:2})
                   }
+                  router.back()
+                  emitter.emit({eventId:2})
                 })
 
             }

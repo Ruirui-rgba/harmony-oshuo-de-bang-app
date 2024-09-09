@@ -18,11 +18,11 @@ struct IndexPage {
   private  tabsController:TabsController=new TabsController()
 
   aboutToAppear(): void {
-    emitter.on({eventId:1},()=>{
-      this.changemessage()
+    emitter.on({eventId:1}, async ()=>{
+      await this.changemessage()
     })
-    emitter.on({eventId:2},()=>{
-      this.intwo()
+    emitter.on({eventId:2}, async ()=>{
+      await this.intwo()
     })
     router.clear()
     GetAllTaskList('1','10','1')
@@ -39,17 +39,23 @@ struct IndexPage {
   intwo(){
     GetAllTaskList('1','10','2')
       .then((value)=>{
+        if (value.items==null){
+          this.TasKDatas=[]
+        }
         if (value.items.length>=1) {
           this.page=value.page
           this.pages=value.pages
           this.TasKDatas=value.items
-          console.info(`===taskdatas${this.TasKDatas[0].id}`)
+          console.info(`===taskdatas${this.TasKDatas.length}`)
         }
       })
   }
   changemessage(){
     GetAllTaskList('1','10','1')
       .then((value)=>{
+        if (value.items==null){
+          this.TasKDatas=[]
+        }
         if (value.items.length>=1) {
           this.page=value.page
           this.pages=value.pages

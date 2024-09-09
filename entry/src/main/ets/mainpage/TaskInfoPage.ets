@@ -262,13 +262,15 @@ struct TaskInfoPage {
           .fontColor(Color.White)
           .width('45%')
           .height(40)
-          .onClick(()=>{
+          .onClick(async ()=>{
             if (this.ifcando) {
               this.Huo.id=this.task?.id as string
               console.info(`huo===${JSON.stringify(this.Huo)}`)
               SubMit(this.Huo)
-              router.back()
-              emitter.emit({eventId:1})
+                .then(()=>{
+                  router.back()
+                  emitter.emit({eventId:1})
+                })
             }
           })
       }
