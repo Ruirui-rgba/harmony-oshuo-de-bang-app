@@ -191,7 +191,7 @@ struct ErrorMessage {
             .justifyContent(FlexAlign.SpaceBetween)
             .onClick(()=>{
                 router.pushUrl({
-                  url:''
+                  url:'mainpage/ErrorMessagePostation'
                 })
             })
 

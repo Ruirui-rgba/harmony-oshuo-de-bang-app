@@ -17,6 +17,7 @@
     "mainpage/ErrorMessage",
     "mainpage/HuiChePage",
     "mainpage/TaskEndPage",
-    "mainpage/DaoHangPage"
+    "mainpage/DaoHangPage",
+    "mainpage/ErrorMessagePostation"
   ]
 }
