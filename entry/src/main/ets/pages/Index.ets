@@ -37,15 +37,15 @@ struct Index {
         this.dialogController.close()
 
         // bug  每次登陆时候无法验证token是否有效
-        let preference=preferencesUtil.getValue('Authorization','') as string
-        if (preference != '') {
-          axiosInstance.defaults.headers.common['Authorization'] = preference
-          let para:Record<string, string> = { 'Authorization': preference};
-          let storage: LocalStorage = new LocalStorage(para);
-          router.pushUrl({
-            url:'mainpage/IndexPage'
-          })
-        }
+        // let preference=preferencesUtil.getValue('Authorization','') as string
+        // if (preference != '') {
+        //   axiosInstance.defaults.headers.common['Authorization'] = preference
+        //   let para:Record<string, string> = { 'Authorization': preference};
+        //   let storage: LocalStorage = new LocalStorage(para);
+        //   router.pushUrl({
+        //     url:'mainpage/IndexPage'
+        //   })
+        // }
 
 
       }

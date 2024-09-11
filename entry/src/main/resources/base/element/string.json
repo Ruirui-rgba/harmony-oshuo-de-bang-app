@@ -51,6 +51,10 @@
     {
       "name": "Cinema_Permission",
       "value": "使用相册"
+    },
+    {
+      "name": "AppName",
+      "value": "货的帮"
     }
   ]
 }
