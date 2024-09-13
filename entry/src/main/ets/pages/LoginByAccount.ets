@@ -1,4 +1,4 @@
-import { router } from '@kit.ArkUI';
+import { promptAction, router } from '@kit.ArkUI';
 import { LoginByAcount } from '../api/LoginDoApi';
 import { LoginModel } from '../model/LoginDo';
 
@@ -16,6 +16,11 @@ struct LoginByAccount {
           this.loading=false
           router.pushUrl({
             url:'mainpage/IndexPage'
+          })
+        }else {
+          this.loading=false
+          promptAction.showToast({
+            message:'账号或密码错误'
           })
         }
       })

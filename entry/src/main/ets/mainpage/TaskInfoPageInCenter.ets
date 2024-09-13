@@ -53,7 +53,7 @@ export struct carmessage{
     .borderRadius(10)
   }
 }
-
+const permissionsss: Array<Permissions> = ['ohos.permission.APPROXIMATELY_LOCATION'];
 @Component
 export struct luxian{
   @Prop ifshow:boolean=false
@@ -111,12 +111,27 @@ export struct luxian{
               .borderColor(Color.Black)
               .textAlign(TextAlign.Center)
               .onClick(()=>{
-                router.pushUrl({
-                  url:'mainpage/DaoHangPage',
-                  params:{
-                    task:this.task
-                  }
-                })
+
+
+                checkPermissions(permissionsss,context)
+                  .then((value)=>{
+                    if (value) {
+                      router.pushUrl({
+                        url:'mainpage/DaoHangPage',
+                        params:{
+                          task:this.task
+                        }
+                      })
+                    }
+                  })
+
+
+                // router.pushUrl({
+                //   url:'mainpage/DaoHangPage',
+                //   params:{
+                //     task:this.task
+                //   }
+                // })
               })
           }
 

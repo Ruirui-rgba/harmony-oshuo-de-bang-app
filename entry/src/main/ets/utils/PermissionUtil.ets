@@ -44,7 +44,7 @@ export async function checkPermissions(permissions:Array<Permissions>,context:co
     // 申请权限
     //   手动申请
     console.log('testTag PERMISSION_DENIED')
-    return  reqPermissionsFromUser(permissions,context)
+    return  await reqPermissionsFromUser(permissions,context)
   }
 }
 
@@ -52,7 +52,7 @@ async  function reqPermissionsFromUser(permissions: Array<Permissions>, context:
   let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
   let bool:boolean=false
   // requestPermissionsFromUser会判断权限的授权状态来决定是否唤起弹窗
-  atManager.requestPermissionsFromUser(context, permissions).then(async (data) => {
+  await atManager.requestPermissionsFromUser(context, permissions).then(async (data) => {
     // 授权的结果 数组
     let grantStatus: Array<number> = data.authResults;
     let length: number = grantStatus.length;

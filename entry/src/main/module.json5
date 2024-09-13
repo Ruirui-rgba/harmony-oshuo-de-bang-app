@@ -45,7 +45,7 @@
             "name": "ohos.extension.backup",
             "resource": "$profile:backup_config"
           }
-        ],
+        ]
       }
     ],
     "requestPermissions": [
@@ -61,7 +61,37 @@
             'EntryAbility'
           ]
         }
+      },
+      {
+        "name": "ohos.permission.APPROXIMATELY_LOCATION",
+        "reason": "$string:Postatrion",
+        "usedScene": {
+          "abilities": [
+            "EntryAbility"
+          ],
+          "when": "inuse"
+        }
+      },
+      {
+        "name": "ohos.permission.LOCATION",
+        // 权限名称，为系统已定义的权限
+        "reason": "$string:Postatrion",
+        // 申请权限的原因，当申请权限为user_grant权限时该字段为必填
+        "usedScene": {
+          // 用于描述权限使用场景，当申请权限为user_grant权限时该字段为必填
+          "abilities": [
+            "EntryAbility"
+          ],
+          "when": "inuse"
+          // 调用时机（inuse：使用时；always：始终）
+        }
       }
     ]
+//    "metadata": [
+//      {
+//        "name": "client_id",
+//        "value": "1506544888378867648"
+//      }
+//    ]
   }
 }
