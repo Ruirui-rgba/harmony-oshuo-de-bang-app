@@ -29,7 +29,7 @@ export const  chossleImage=():Promise<string[]>=>{
   })
 }
 
-
+// 文件上传如果需要后端改大小限制
 export async function  uploadImg(FilePath:string,Filename:string,UIabilityContext:common.UIAbilityContext){
   let url:string=''
   let formData = new FormData()
