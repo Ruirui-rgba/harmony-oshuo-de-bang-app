@@ -86,12 +86,12 @@
           // 调用时机（inuse：使用时；always：始终）
         }
       }
+    ],
+    "metadata": [
+      {
+        "name": "client_id",
+        "value": "112024247"
+      }
     ]
-//    "metadata": [
-//      {
-//        "name": "client_id",
-//        "value": "1506544888378867648"
-//      }
-//    ]
   }
 }

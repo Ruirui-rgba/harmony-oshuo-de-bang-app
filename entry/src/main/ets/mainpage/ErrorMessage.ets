@@ -16,9 +16,10 @@ const context = getContext(this) as common.UIAbilityContext
 @Entry
 @Component
 struct ErrorMessage {
+  @StorageLink('errorpostation') Postation:string='北京市 北京市 海淀区'
   @State nowdate:string=gettime(new Date())
   @State transportTaskId:string=''
-  @State Postation:string='北京市 北京市 海淀区'
+  // @State Postation:string='北京市 北京市 海淀区'
   @State ErrorRype:string=''
   @State nowchoose:number=1
   @State textinp:string=''
@@ -180,6 +181,9 @@ struct ErrorMessage {
               Row({space:5}){
                 Text(this.Postation)
                   .fontColor($r('app.color.Neutral_Colors_MainFont'))
+                  .textOverflow({ overflow: TextOverflow.Ellipsis })
+                  .maxLines(1)
+                  .width('50%')
                 Image($r('app.media.ic_btn_more'))
                   .width(35)
                   .height(35)

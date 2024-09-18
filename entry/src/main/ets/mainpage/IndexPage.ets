@@ -5,7 +5,7 @@ import { TasKDataModel } from '../model/TaskDo';
 import { IndexMessage } from '../MessagePages/MessIndexPage';
 import { Mypage } from '../mypage/MyPage';
 import { emitter } from '@kit.BasicServicesKit';
-
+AppStorage.setOrCreate('errorpostation','')
 @Entry
 @Component
 struct IndexPage {

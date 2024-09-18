@@ -5,13 +5,13 @@
         "name": "default",
         "type": "HarmonyOS",
         "material": {
-          "certpath": "C:\\Users\\24256\\.ohos\\config\\default_huodebang_-djVP4uosXg3AtycA2Wrr18Gf3YjnJ_3KTh79OlYdmY=.cer",
-          "storePassword": "0000001B086B4D26693BFDCCD2BA2E28A6A3FD338C8F5CEFD031A4A4A26965FE4EB0584F0BE8F019E1CA56",
+          "storePassword": "0000001B4DE2DAF812E227402E737E89F9062B207B18C5353DA4EAD4811D3DAEBEE35BD5FC0C017A8A717A",
+          "certpath": "D:/MyHuo.cer",
           "keyAlias": "debugKey",
-          "keyPassword": "0000001BC1782B2B4942FBAE492E22ECACB9053966DBB1524E94CF587D897175CD091E44BC88978EAA2AA6",
-          "profile": "C:\\Users\\24256\\.ohos\\config\\default_huodebang_-djVP4uosXg3AtycA2Wrr18Gf3YjnJ_3KTh79OlYdmY=.p7b",
+          "keyPassword": "0000001B9433968933654AA3BC99379AF350DDA33F86A8596FDC66EC2429F013A9CD00FFD57C7BA2C19223",
+          "profile": "D:/MyHuoDebug.p7b",
           "signAlg": "SHA256withECDSA",
-          "storeFile": "C:\\Users\\24256\\.ohos\\config\\default_huodebang_-djVP4uosXg3AtycA2Wrr18Gf3YjnJ_3KTh79OlYdmY=.p12"
+          "storeFile": "C:/Users/24256/.ohos/config/default_huodebang_-djVP4uosXg3AtycA2Wrr18Gf3YjnJ_3KTh79OlYdmY=.p12"
         }
       }
     ],

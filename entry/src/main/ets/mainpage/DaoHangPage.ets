@@ -3,7 +3,7 @@ import { TaskDatil } from '../model/TaskDo'
 import { common, Permissions, Want } from '@kit.AbilityKit';
 import { checkPermissions } from '../utils/PermissionUtil';
 import { geoLocationManager } from '@kit.LocationKit';
-import { MapComponent, mapCommon, map } from '@kit.MapKit';
+import { MapComponent, mapCommon, map, navi } from '@kit.MapKit';
 import { AsyncCallback } from '@kit.BasicServicesKit';
 class pageinfo{
   task:TaskDatil=new TaskDatil()
@@ -27,6 +27,7 @@ struct DaoHangPage {
     // 绘制地图页面的生命周期onPageShow，将地图切换到前台
     if (this.mapController !== undefined) {
       this.mapController.show();
+
     }
   }
 
@@ -39,8 +40,8 @@ struct DaoHangPage {
   getpostation(){
     try {
       this.Location= geoLocationManager.getLastLocation()
-      // this.latitude=this.Location.latitude
-      // this.longitude=this.Location.longitude
+      this.latitude=this.Location.latitude
+      this.longitude=this.Location.longitude
       console.info(`===location:${this.Location.latitude}`)
     } catch (err) {
       console.error("errCode:" + JSON.stringify(err));
@@ -50,17 +51,11 @@ struct DaoHangPage {
    aboutToAppear(): void {
     this.task= (router.getParams() as pageinfo).task
 
-    // checkPermissions(permissions,context)
-    //   .then((value)=>{
-    //     this.getpostation()
-    //   })
-
-    this.getpostation()
     this.mapOptions = {
       position: {
         target: {
-          latitude: 39.9,
-          longitude:116.4
+          latitude: this.latitude,
+          longitude:this.longitude
         },
         zoom: 10
       }
@@ -73,12 +68,72 @@ struct DaoHangPage {
           // 获取地图的控制器类，用来操作地图
           this.mapController = mapController;
           this.mapEventManager = this.mapController.getEventManager();
-          let callback = () => {
 
+
+          checkPermissions(permissions,context)
+            .then((value)=>{
+              if (value){
+                this.getpostation()
+                // 启用我的位置图层，mapController为地图操作类对象，获取方式详见显示地图章节
+                this.mapController?.setMyLocationEnabled(true);
+                // 启用我的位置按钮
+                this.mapController?.setMyLocationControlsEnabled(true);
+                // this.mapController?.setMyLocation(this.Location);
+
+                let target: mapCommon.LatLng = {
+                  latitude: this.latitude,
+                  longitude:this.longitude
+                };
+                let cameraPosition: mapCommon.CameraPosition = {
+                  target: target,
+                  zoom: 10
+                };
+                // 新建CameraUpdate对象
+                let cameraUpdate: map.CameraUpdate = map.newCameraPosition(cameraPosition);
+                this.mapController?.animateCamera(cameraUpdate, 1000);
+
+
+
+
+
+
+
+                let markerOptions: mapCommon.MarkerOptions = {
+                  position: {
+                    latitude: this.latitude,
+                    longitude: this.longitude
+                  },
+                  rotation: 0,
+                  visible: true,
+                  zIndex: 0,
+                  alpha: 1,  //透明度，取值范围[0, 1]，0代表完全透明，1表示完全不透明，默认值为1，异常值按默认值处理。
+                  anchorU: 0.5,
+                  anchorV: 1,
+                  clickable: true,
+                  draggable: true,
+                  flat: false
+                };
+                // 创建Marker
+                this.mapController?.addMarker(markerOptions);
+
+
+
+
+
+
+              }
+            })
+
+
+          let callback = () => {
+            // this.mapController?.setMyLocation(this.Location);
           }
           this.mapEventManager.on("mapLoad", callback);
         }
       }
+
+
+
 
   }
   @Builder
@@ -194,7 +249,7 @@ struct DaoHangPage {
           .width('70%')
           .height(60)
           .backgroundColor(Color.Red)
-          .onClick(()=>{
+          .onClick(async ()=>{
             let petalMapWant: Want = {
               bundleName: 'com.huawei.hmos.maps.app',
               uri: 'maps://routes',
@@ -210,6 +265,22 @@ struct DaoHangPage {
 
             let context = getContext(this) as common.UIAbilityContext;
             context.startAbility(petalMapWant);
+
+
+            // let params: navi.DrivingRouteParams = {
+            //   origins: [{
+            //     "latitude": this.latitude,
+            //     "longitude":this.longitude
+            //   }],
+            //   destination: {
+            //     "latitude": 31.9821213545843,
+            //     "longitude": 120.277557768591
+            //   },
+            //   language: "zh_CN"
+            // };
+            // const result = await navi.getDrivingRoutes(getContext(), params);
+            // console.info("driving routes."+JSON.stringify(result));
+
           })
 
       }
